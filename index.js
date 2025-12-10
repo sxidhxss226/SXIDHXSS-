@@ -701,15 +701,15 @@ Owner / Admin:
       }
 
       // ---------- FALLBACK ----------
-      await sock.sendMessage(chat, { text: `❓ Unknown command: ${command}\nType .menu for help.` });
-    } catch (e) {
-      console.error("messages.upsert error", e);
-    }
-  });
+      await sock.sendMessage(chat, { text: `❓ Unknown command: ${command}\nType .menu for help.'});
+        } catch (e) {
+    console.error("messages.upsert error", e);
+  }
+});
 
-  // Auto-welcome for new contacts
+// Auto-welcome for new contacts
 sock.ev.on("contacts.upsert", async (contacts) => {
-  try {  // <--- ADD THIS LINE
+  try {
     for (const c of contacts) {
       const num = c.id;
       if (!num) continue;
@@ -718,18 +718,18 @@ sock.ev.on("contacts.upsert", async (contacts) => {
         await sock.sendMessage(num, { text: `👋 Hello! ${BOT_NAME} at your service.\nType .menu for commands.` });
       }
     }
-   catch (e) {  // <--- This catch now has a matching try
+  } catch (e) {
     console.log("Welcome message error:", e);
   }
 });
-  console.log(`${BOT_NAME} starting...`);
+
+console.log(`${BOT_NAME} starting...`);
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
 });
-
-process.on('unhandledRejection', (reason, promise) => {
+    process.on('unhandledRejection', (reason, promise) => {
   console.error('Unhandled Rejection at:', promise, 'reason:', reason);
 });
 
