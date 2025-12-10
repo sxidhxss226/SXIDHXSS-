@@ -723,7 +723,7 @@ Owner / Admin:
   });
 
   console.log(`${BOT_NAME} starting...`);
-}
+
 
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {
