@@ -708,21 +708,20 @@ Owner / Admin:
   });
 
   // Auto-welcome for new contacts
-  sock.ev.on("contacts.upsert", async (contacts) => {
-    try {
-      for (const c of contacts) {
-        const num = c.id;
-        if (!num) continue;
-        // Don't send welcome message to groups
-        if (!isGroup(num)) {
-          await sock.sendMessage(num, { text: `👋 Hello! ${BOT_NAME} at your service.\nType .menu for commands.` });
-        }
+sock.ev.on("contacts.upsert", async (contacts) => {
+  try {  // <--- ADD THIS LINE
+    for (const c of contacts) {
+      const num = c.id;
+      if (!num) continue;
+      // Don't send welcome message to groups
+      if (!isGroup(num)) {
+        await sock.sendMessage(num, { text: `👋 Hello! ${BOT_NAME} at your service.\nType .menu for commands.` });
       }
-    } catch (e) {
-      console.log("Welcome message error:", e);
     }
-  });
-
+  } catch (e) {  // <--- This catch now has a matching try
+    console.log("Welcome message error:", e);
+  }
+});
   console.log(`${BOT_NAME} starting...`);
 
 // Handle uncaught exceptions
