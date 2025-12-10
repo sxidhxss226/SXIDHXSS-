@@ -718,7 +718,7 @@ sock.ev.on("contacts.upsert", async (contacts) => {
         await sock.sendMessage(num, { text: `👋 Hello! ${BOT_NAME} at your service.\nType .menu for commands.` });
       }
     }
-  } catch (e) {  // <--- This catch now has a matching try
+   catch (e) {  // <--- This catch now has a matching try
     console.log("Welcome message error:", e);
   }
 });
