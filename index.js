@@ -702,7 +702,7 @@ Owner / Admin:
 
       // ---------- FALLBACK ----------
       await sock.sendMessage(chat, { text: `❓ Unknown command: ${command}\nType .menu for help.'});
-        } catch (e) {
+           } catch (e) {
     console.error("messages.upsert error", e);
   }
 });
