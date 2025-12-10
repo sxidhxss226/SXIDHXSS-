@@ -81,7 +81,7 @@ function quotedTextFromMsg(msg) {
   // return text if extendedTextMessage
   return msg?.message?.extendedTextMessage?.text || msg?.message?.conversation || "";
 }
-}
+
 
 // build a simple tic-tac-toe ASCII board
 function tttBoardToText(board) {
@@ -98,7 +98,7 @@ function tttBoardToText(board) {
 async function startBot() {
   const { state, saveCreds } = await useMultiFileAuthState(SESSION_FOLDER);
   const { version } = await fetchLatestBaileysVersion();
-
+}
   const sock = makeWASocket({
     logger: P({ level: "silent" }),
     printQRInTerminal: true,
