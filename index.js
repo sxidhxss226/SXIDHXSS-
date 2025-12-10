@@ -486,7 +486,7 @@ Owner / Admin:
         
         await sock.sendMessage(chat, { text: `✅ Broadcast completed.\nSuccess: ${success}\nFailed: ${failed}` });
         return;
-      }
+    
 
       // ---------- FUN COMMANDS ----------
       if (command === "quote") {
@@ -561,7 +561,7 @@ Owner / Admin:
         };
         await sock.sendMessage(chat, { text: `♟️ TicTacToe started!\n${initiator.split("@")[0]} vs ${opponent.split("@")[0]}\n\n${tttBoardToText(games.ticTacToe[chat].board)}\n\nTo play: .tttmove <1-9>` });
         return;
-      }
+      
 
         if (command === "tttmove") {
         const game = games.ticTacToe[chat];
