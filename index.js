@@ -621,7 +621,7 @@ Owner / Admin:
         };
         await sock.sendMessage(chat, { text: `🕹️ Hangman started! Word: ${games.hangman[chat].display.join(" ") }\nTries left: 6\nGuess with .hangmanguess <letter>` });
         return;
-      }
+      
       if (command === "hangmanguess") {
         const g = games.hangman[chat];
         if (!g) return await sock.sendMessage(chat, { text: "No hangman game active. Start with .hangmanstart" });
