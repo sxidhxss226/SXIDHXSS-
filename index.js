@@ -724,7 +724,6 @@ Owner / Admin:
 
   console.log(`${BOT_NAME} starting...`);
 
-
 // Handle uncaught exceptions
 process.on('uncaughtException', (error) => {
   console.error('Uncaught Exception:', error);
@@ -746,4 +745,3 @@ async function initializeBot() {
 }
 
 initializeBot();
-```
