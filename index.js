@@ -81,11 +81,12 @@ function quotedTextFromMsg(msg) {
   // return text if extendedTextMessage
   return msg?.message?.extendedTextMessage?.text || msg?.message?.conversation || "";
 }
+}
 
 // build a simple tic-tac-toe ASCII board
 function tttBoardToText(board) {
   // board is array length 9 with "", "X", "O"
-  let out = "";
+  let out ="";
   for (let r = 0; r < 3; r++) {
     out +=
       ` ${board[r * 3] || (r * 3 + 1)} | ${board[r * 3 + 1] || (r * 3 + 2)} | ${board[r * 3 + 2] || (r * 3 + 3)}\n`;
